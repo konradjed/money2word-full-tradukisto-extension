@@ -1,0 +1,42 @@
+# Maven
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.jar
+
+# IDE
+.idea/
+*.iws
+*.iml
+*.ipr
+.vscode/
+.settings/
+.project
+.classpath
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Java
+*.class
+*.log
+hs_err_pid*
+
+# Application specific
+logs/
+temp/
+*.tmp
+*.bak### Maven template
+# https://github.com/takari/maven-wrapper#usage-without-binary-jar
+
+# Eclipse m2e generated files
+# Eclipse Core
+# JDT-specific (Eclipse Java Development Tools)
+
