@@ -66,3 +66,52 @@ String neg = Money2WordsFull.asWords(new BigDecimal("-10.00"), "PLN", polish);
 // → "minus dziesięć złotych"
 
 ```
+
+
+## Extensibility Examples
+
+### Adding a New Currency (GBP)
+
+1. **Add to Currency enum**:
+```java
+GBP("GBP")
+```
+
+2. **Create unit names class**:
+```java
+public static class GbpNames extends EnglishUnitNames {
+    @Override
+    public String getMainUnitName(long amount) {
+        return amount == 1 ? "pound" : "pounds";
+    }
+    
+    @Override
+    public String getMinorUnitName(long amount) {
+        return amount == 1 ? "penny" : "pence";
+    }
+}
+```
+
+3. **Register in factory**:
+```java
+Currency.GBP, new EnglishUnitNames.GbpNames()
+```
+
+### Adding a New Language (German)
+
+1. **Add to Language enum**:
+```java
+GERMAN("de")
+```
+
+2. **Create unit names classes**:
+```java
+public abstract class GermanUnitNames implements UnitNames {
+    // German-specific plural logic
+}
+```
+
+3. **Add to NumberConverter**:
+```java
+case GERMAN -> LongValueConverters.GERMAN_LONG;
+```
