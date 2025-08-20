@@ -46,4 +46,40 @@ public abstract class PolishUnitNames implements UnitNames {
             return getPolishPluralForm(amount, "cent", "centy", "centów");
         }
     }
+
+    public static class GbpNames extends PolishUnitNames {
+        @Override
+        public String getMainUnitName(long amount) {
+            return getPolishPluralForm(amount, "funt", "funty", "funtów");
+        }
+
+        @Override
+        public String getMinorUnitName(long amount) {
+            return getPolishPluralForm(amount, "pens", "pensy", "pensów");
+        }
+    }
+
+    public static class JpyNames extends PolishUnitNames {
+        @Override
+        public String getMainUnitName(long amount) {
+            return getPolishPluralForm(amount, "jen", "jeny", "jenów");
+        }
+
+        @Override
+        public String getMinorUnitName(long amount) {
+            return getPolishPluralForm(amount, "sen", "seny", "senów");
+        }
+    }
+
+    public static class ChfNames extends PolishUnitNames {
+        @Override
+        public String getMainUnitName(long amount) {
+            return getPolishPluralForm(amount, "frank", "franki", "franków");
+        }
+
+        @Override
+        public String getMinorUnitName(long amount) {
+            return getPolishPluralForm(amount, "centym", "centymy", "centymów");
+        }
+    }
 }

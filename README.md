@@ -72,12 +72,16 @@ String neg = Money2WordsFull.asWords(new BigDecimal("-10.00"), "PLN", polish);
 
 ### Adding a New Currency (GBP)
 
+
+
 1. **Add to Currency enum**:
 ```java
 GBP("GBP")
 ```
 
 2. **Create unit names class**:
+> Library supports also currency localization so it could be extended to transform money to words exactly how You speak in Your Country. Example "pounds" in Polish language refers British currency by speak "funty".
+
 ```java
 public static class GbpNames extends EnglishUnitNames {
     @Override
@@ -92,7 +96,7 @@ public static class GbpNames extends EnglishUnitNames {
 }
 ```
 
-3. **Register in factory**:
+3. **Register in factory `UnitNamesFactory`**:
 ```java
 Currency.GBP, new EnglishUnitNames.GbpNames()
 ```
@@ -111,7 +115,14 @@ public abstract class GermanUnitNames implements UnitNames {
 }
 ```
 
-3. **Add to NumberConverter**:
+3. **Add to `NumberConverter`**:
 ```java
 case GERMAN -> LongValueConverters.GERMAN_LONG;
+```
+4. **Register in factory `UnitNamesFactory`**:
+```java
+
+Language.GERMAN, Map.of(
+    Currency.EUR, new GermanUnitNames.EurNames()
+)
 ```

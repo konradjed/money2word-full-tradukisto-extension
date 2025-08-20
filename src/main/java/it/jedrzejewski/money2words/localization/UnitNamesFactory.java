@@ -13,10 +13,16 @@ public class UnitNamesFactory {
         Language.POLISH, Map.of(
             Currency.PLN, new PolishUnitNames.PlnNames(),
             Currency.EUR, new PolishUnitNames.EurNames(),
-            Currency.USD, new PolishUnitNames.UsdNames()
+            Currency.USD, new PolishUnitNames.UsdNames(),
+            Currency.GBP, new PolishUnitNames.GbpNames(),
+            Currency.JPY, new PolishUnitNames.JpyNames(),
+            Currency.CHF, new PolishUnitNames.ChfNames()
         ),
         Language.ENGLISH, Map.of(
-            Currency.USD, new EnglishUnitNames.UsdNames()
+            Currency.USD, new EnglishUnitNames.UsdNames(),
+            Currency.GBP, new EnglishUnitNames.GbpNames(),
+            Currency.JPY, new EnglishUnitNames.JpyNames(),
+            Currency.CHF, new EnglishUnitNames.ChfNames()
         )
     );
     

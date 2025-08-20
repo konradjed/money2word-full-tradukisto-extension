@@ -3,7 +3,10 @@ package it.jedrzejewski.money2words.model;
 public enum Currency {
     PLN("PLN"),
     USD("USD"),
-    EUR("EUR");
+    EUR("EUR"),
+    GBP("GBP"),
+    JPY("JPY"),
+    CHF("CHF");
     
     private final String code;
     
