@@ -1,15 +1,15 @@
-# Money In Words (Tradukisto wrapper)
+# Money In Words - Full (Tradukisto wrapper)
 
-Convert monetary amounts into **fully verbalized phrases** (integer **and** fractional part) using [Tradukisto] numbers for words, plus **country-specific minor unit names** (e.g. Polish _grosz/grosze/groszy_, English _cent/cents_).
+Below is a small wrapper that uses Tradukisto’s integer converters for both parts and adds country-specific minor unit names (e.g., Polish _grosz/grosze/groszy_, English _cent/cents_).
 
 > **Why not just use Tradukisto `MoneyConverters`?**  
-> Out of the box, Tradukisto’s money converters render the fractional part as a fraction (`56/100`). Many business documents (invoices, contracts, payment orders) require the **fractional part in words** and **correct plural forms by locale**. This small library fills that gap.
+> Tradukisto’s built-in money converters are “banking style”: they spell the integer part in words, but the fractional part is rendered as xx/100 (e.g., … PLN 56/100). So you won’t get “grosze/cents” as words out of the box. Many business documents (invoices, contracts, payment orders) require the **fractional part in words** and **correct plural forms by locale**. This small library fills that gap.
 
 ---
 
 ## Business requirement this solves
 
-Organizations issuing Polish and international documents require that:
+You can use this wrapper in organizations issuing Polish and international documents require that:
 
 1. **The integer part is written in words** according to the document language.
 2. **The fractional part is written in words** with **proper minor currency unit** names and **grammar** (e.g., `grosz/grosze/groszy` in PL, `cent/cents` in EN).
@@ -24,7 +24,7 @@ Tradukisto already provides excellent number wording across multiple languages; 
 
 ## Features
 
-- Integer wording powered by Tradukisto `ValueConverters` (PL, EN, DE, FR, ES, …).
+- Integer wording powered by Tradukisto `ValueConverters` (Here we used PL, EN. but it could be easly extended by DE, FR, ES, …).
 - Fractional part as **words** (not `xx/100`).
 - Locale-specific pluralization (Polish included).
 - Negative values, zero values, and rounding to 2 decimals.
@@ -35,7 +35,7 @@ Tradukisto already provides excellent number wording across multiple languages; 
 
 ## Requirements
 
-- Java 19+
+- Java 11+
 - Maven/Gradle project with:
     - `pl.allegro.finance:tradukisto`
     - (Your wrapper module/classes)
